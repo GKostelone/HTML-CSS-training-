@@ -1,0 +1,388 @@
+body {
+	/*height: 4000px;*/ /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+	background-color: #EBEBEB;
+}
+
+/*----------nav-top----------*/
+
+nav.navbar-fixed-top {
+	background-color: #FFFFFF !important;
+	border-bottom: 1px solid #E0E0E0;
+}
+
+
+.header-input {
+	padding-top: 10px;
+}
+
+.img-brand {
+	width: 127px;
+	height: 32px;
+}
+
+.form-control::placeholder {
+	color: #CBCBCB;
+}
+
+.nav-header-btn {
+	background-color: #FAFAFA;
+	width: 90px;
+	height: 40px;
+	border: 1px solid #D9D9D9;
+	border-radius: 0;
+	color: #484848;
+	font-size: 14px;
+	font-family: OpenSans,Arial,sans-serif;
+}
+
+.header-nav-search {
+	height: 40px;
+	width: 412px !important;
+}
+
+.span-search {
+	padding-right: 165px;
+}
+
+.nav-header-btn-icon {
+	background-color: #FAFAFA;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #D9D9D9;
+	border-radius: 0;
+}
+
+
+.list-inline {
+	margin-top: 10px;
+}
+
+.header-right-li-2 {
+	border-left: 2px solid #E0E0E0;
+}
+
+.header-right-a-1 {
+	font-size: 14px;
+	color: #333333;
+	padding-top: 3px !important;
+	padding-right: 14px !important;
+	padding-left: 24px !important;
+	padding-bottom: 3px !important; 
+}
+
+.header-right-a-2 {
+	font-size: 14px;
+	color: #333333;
+	padding-right: 18px !important;
+	padding-left: 18px !important;
+	padding-bottom: 3px !important;  
+}
+
+.header-right-a-1:hover {
+	text-decoration: none;
+	color: #4A90E2;
+} 
+
+.header-right-a-2:hover {
+	text-decoration: none;
+	color: #4A90E2;
+} 
+
+.header-right-btn {
+	height: 40px;
+	width: 88px;
+	background-color: #2073D4;
+	color: #FFFFFF;
+	border-radius: 2px;
+}
+
+.header-right-btn:hover {
+	background-color: #005bbe;
+	color: #FFFFFF;
+}
+
+
+
+/*----------nav-middle----------*/
+
+
+.nav-2 {
+	background-image: url(https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/growth_discovery/images/domains/computer-science.r1.png?auto=&dpr=1);
+	height: 181px;
+	margin-top: 60px;
+}
+
+#left-menu {
+	width: 250px;
+	position: absolute;
+	left: 45px;
+	top: 50px;
+	/*z-index: 1030;*/
+	
+}
+
+.list-group-item:first-child {
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.list-group-item {
+	padding: 15px 15px;
+	background-color: #F7F7F7;
+}
+
+button.list-group-item:hover {
+    text-decoration: none;
+    background-color: #FFFFFF;
+}
+
+button.list-group-item:hover > a {
+    color: #4A90E2;
+}
+
+
+.nav-2-a {
+	color: #000000;
+	font-size: 1.5rem;
+	line-height: 1.5;
+}
+
+.nav-2-a:hover {
+	text-decoration: none;
+	color: #4A90E2;
+}
+
+
+
+.fa-angle-right {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+.nav-2-information-text {
+	font-size: 1.5rem;
+	color: #EFEFEF;
+	font-weight: 700;
+	margin-top: 45px;
+	margin-left: -15px;
+	margin-bottom: 45px;
+}
+
+
+
+.nav-2-information-a:hover {
+	color: #EFEFEF;
+}
+
+.nav-2-information-a {
+	font-size: 1.5rem;
+	color: #EFEFEF;
+	font-weight: 300;
+}
+.nav-2-maintitle {
+	display: inline-block;
+}
+.nav-2-information-title {
+	color: #FFFFFF;
+	font-size: 32px !important;
+	font-weight: 400 !important;
+	margin-left: -15px;
+}
+
+.fa-question-circle-o {
+	color: #FFFFFF;
+	padding-left: 5px; 
+}
+
+
+/*----------nav-main----------*/
+
+.main-filtres-p {
+	font-weight: 700;
+	font-size: 12px;
+	color: #333;
+	margin-right: 10px;
+	margin-top: 34px;
+	margin-bottom: 10px;
+	margin-left: -10px;
+	line-height: 14px;
+}
+
+.main-filtres-span {
+	margin-left: 14px;
+	margin-right: 10px;
+	color: #c5c5c5;
+}
+
+.main-filtres-ul {
+	margin-left: -15px;
+	margin-bottom: 50px;
+}
+
+.main-filtres-a {
+	font-size: 1.4rem;
+	line-height: 1.5rem;
+	color: #4A90E2;
+}
+
+.main-filtres-a:hover {
+	color: #014c8c;
+}
+
+.main-title {
+	font-size: 22px;
+	line-height: 24px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	color: #373A3C !important;
+}
+
+.main-links-box {
+	background-color: #fff;
+	border: 1px solid #dcdcdc;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	min-height: 120px;
+	padding: 10px;
+}
+
+.main-links-box:hover {
+	background-color: #F7F7F7;
+}
+
+.main-links-title-h2 {
+	font-size: 20px;
+	line-height: 24px;
+	margin: 12px 0 8px;
+	color: #212121;
+	font-weight: 400;
+}
+
+.main-links-span1 {
+	background-color: #969696;
+	color: #fff;
+	padding: 4px 15px;
+	font-weight: 300;
+}
+
+.main-links-dot {
+	padding-right: 5px;
+	padding-left: 7px;
+	color: #B3B3B3;
+}
+
+.main-links-span2 {
+	font-size: 1.4rem;
+	line-height: 1.5rem;
+	color: #B3B3B3;
+}
+
+.header-right-btn-2 {
+	height: 48px;
+	width: 109px;
+	background-color: #2073D4;
+	color: #FFFFFF;
+	border-radius: 2px;
+	font-size: 14px;
+	margin-bottom: 68px;
+}
+
+.header-right-btn-2:hover {
+	background-color: #005bbe;
+	color: #FFFFFF;
+}
+
+
+
+
+/*----------footer----------*/
+
+footer {
+	background-color: #F5F5F5;
+}
+
+
+.footer-col {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.footer-left-text {
+	margin-top: 2rem;
+	margin-bottom: 1.5rem;
+}
+
+.footer-left-text-span {
+	font-size: 14px;
+	line-height: 21px;
+	font-family: OpenSans,Arial,sans-serif;
+}
+
+.footer-left-text2 {
+	margin-bottom: 1.5rem;
+}
+
+.footer-left-text-span2 {
+	font-size: 12px;
+	line-height: 18px;
+	font-family: OpenSans,Arial,sans-serif;
+}
+
+.footer-list-title {
+	margin-bottom: 10px;
+}
+
+.footer-list-li {
+	margin-bottom: 10px;
+}
+
+.footer-list-a {
+	line-height: 1.5;
+	color: rgba(0,0,0,.54);
+	font-size: 16px;
+}
+
+.footer-list-a:hover {
+	color: #4A90E2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

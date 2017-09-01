@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script
+		src="https://code.jquery.com/jquery-2.2.4.js"
+		integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+		crossorigin="anonymous">
+	 </script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/oj.mustache/0.7.2/oj.mustache.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheets.css">
+
+	<script src="https://use.fontawesome.com/b33141a820.js"></script>
+
+</head>
+<body>
+	<header>
+		<div class="container-fluid">
+			<img class="header-icon-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEyOCAxMjgiIGlkPSJTb2NpYWxfSWNvbnMiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEyOCAxMjgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIGlkPSJfeDM3X19zdHJva2UiPjxnIGlkPSJBaXJibmJfMV8iPjxyZWN0IGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBoZWlnaHQ9IjEyOCIgd2lkdGg9IjEyOCIvPjxwYXRoIGQ9Ik02NS45OTEsOTQuOTA2Yy0xLjA2Ny0xLjI4LTEuOTMxLTIuNDcyLTMuNTk5LTQuODk5Yy0wLjExLTAuMTYtMC4xMS0wLjE2LTAuMjItMC4zMiAgICBjLTAuMDY0LTAuMDkzLTAuMDY0LTAuMDkzLTAuMTI4LTAuMTg3Yy0yLjI4NC0zLjQxMi00LjEzNi02LjY4MS01LjU4NC05Ljk0OGMtMS4zNzktMy4xNS0yLjI0Ni01Ljk5NC0yLjU5My04Ljc0NSAgICBjLTAuMjk1LTIuNTQ4LTAuMTMyLTQuNzQsMC41NjMtNi41NzFjMC42NTktMS44MTgsMS45MTEtMy4zODgsMy41MDctNC40MjNjMy45ODktMi42MjIsOS42NzgtMi4yODQsMTMuMTg5LDAuODA1ICAgIGMxLjY3OCwxLjQ1NiwyLjc4LDMuNjg5LDMuMDU4LDYuMTI4YzAuMzUsMy4xMTktMC4yMzQsNi41MTktMS42MzksMTAuMzM5Yy0yLjE1OCw1Ljc2OC01LjUwNiwxMS4zMDMtMTAuNTM3LDE3LjkxbDIuMDI3LDEuNTU0ICAgIEw2NS45OTEsOTQuOTA2eiBNMTA5LjQ1NywxMDQuMTYzYy0xLjEyLDMuOTM4LTMuODI0LDcuMzktNy4zMzQsOS4zNjhjLTMuMDkzLDEuNzYyLTYuODI5LDIuMzk4LTEwLjM5NiwxLjc5MSAgICBjLTQuMjQ4LTAuNjczLTguNDI0LTIuODY4LTEyLjc3LTYuNDM0Yy0yLjU1My0yLjA5LTUtNC41My03Ljk1Ni03LjgzMmwwLjExNCwzLjI4NGM0Ljg2Ny02LjI2OSw4LjM3Ni0xMS41ODIsMTEuMDg3LTE3LjEzMyAgICBjMy4wMzgtNi4yNCw0Ljc1MS0xMi4wNjYsNC45MzItMTcuODUzYzAuMTIxLTQuMzQ2LTAuNzMzLTguNTMzLTIuNTg1LTEyLjEyOGMtMi41MDEtNC45NTMtNi45OTQtOC44NTMtMTIuMjg0LTEwLjc0OSAgICBjLTQuNzg5LTEuNzQyLTEwLjEyOS0xLjkwOS0xNS4wNTQtMC40NzljLTQuNzM1LDEuMzY1LTguOTY4LDQuMjU5LTExLjg2MSw4LjE4MWMtMi41MTksMy4zODMtNC4wMzEsNy41ODgtNC4zNzgsMTEuOTc1ICAgIGMtMC40NjIsNS40ODEsMC42NzQsMTEuMTgzLDMuMTE5LDE3LjIyYzIuODkzLDcuMDIyLDcuMTAyLDEzLjczMiwxMi44MjQsMjAuOTI1bDAuMDQ5LTMuMjU1Yy0yLjA5LDIuNDY5LTQuNDE3LDQuODE5LTYuOTU5LDcuMDQyICAgIGMtNC4zMzMsMy43MzQtOC40NDEsNi4xMDYtMTIuNjYyLDcuMDM2Yy0zLjcxMiwwLjg0OC03LjYyMSwwLjM5Ni0xMC44NzMtMS4yNzljLTMuODc1LTEuOTY3LTYuODYyLTUuNjg2LTcuOTgzLTkuOTM4ICAgIGMtMC44NDMtMy4wNzQtMC43LTYuNDgxLDAuMzY0LTkuNjc2YzAuNjI2LTEuODcsMS4yNTctMy4zNzgsMi43NDQtNi42OTVjMC4wNjItMC4xMzksMC4wNjItMC4xMzksMC4xMjUtMC4yNzkgICAgYzAuMjcxLTAuNjA2LDAuNDQ3LTAuOTk5LDAuNjI2LTEuNDA1YzguNjExLTE5LjEyMiwxNy43MjktMzguMjA3LDI3LjMzNi01Ny4yMzRjMC4yMDQtMC40MDMsMC4zNjctMC43MjYsMC43MzQtMS40NTIgICAgYzAuMDE5LTAuMDM3LDAuMDE5LTAuMDM3LDAuMDM3LTAuMDczYzEuNzE2LTMuNDAxLDIuNTEzLTQuOTQ5LDMuNTI3LTYuODEyYzEuMzYxLTIuNDY1LDIuNTU5LTQuMDY3LDQuMDA1LTUuMTg1ICAgIGMxLjczMy0xLjM4LDMuOTA3LTIuMTIsNi4wNS0yLjA3YzIuMjkyLTAuMDI2LDQuNTMyLDAuODA1LDYuMjY1LDIuMjg4YzEuNTQ3LDEuMzA4LDIuNzMsMy4wMzQsNC4zMTIsNi4wNDEgICAgYzIuMjc0LDQuMzUsNC4yNTMsOC4yNzUsNy44NzgsMTUuNTY3YzAuMzI0LDAuNjUxLDAuMzI0LDAuNjUxLDAuNjQ4LDEuMzAzYzAuMDM2LDAuMDcyLDAuMDM2LDAuMDcyLDAuMDcyLDAuMTQ0ICAgIGM4LjEyMywxNi4zNzksMTUuODg3LDMyLjgyMywyMy4yODYsNDkuMzI5YzAuMSwwLjIzMSwwLjE3OSwwLjQwOCwwLjM2NywwLjgzN2MwLjA2OSwwLjE1NywwLjA2OSwwLjE1NywwLjEzOSwwLjMxNCAgICBjMS4zOTEsMy4xNTMsMS45NjEsNC41ODUsMi40NTUsNi4zNmMwLjgxMywyLjk1LDAuODE5LDYuMDk4LDAuMDAxLDguOTUxTDEwOS40NTcsMTA0LjE2M3ogTTEyMi42NjMsOTguODUxICAgIGMtMC4wNC0zLjY4LTAuODM4LTcuNDM3LTIuMjg2LTExLjE4N2MtMC43MTctMS44NjItMS4zNS0zLjMyOC0yLjc4NC02LjUyN2MtMC4wNDItMC4wOTMtMC4wNDItMC4wOTMtMC4wODQtMC4xODcgICAgYy0wLjE5OS0wLjQ0NS0wLjE5OS0wLjQ0NS0wLjM5OC0wLjg4OGMtOC43OTgtMTkuNTI5LTE4LjA1MS0zOC44OS0yNy43NTYtNTguMDgzYy0wLjI0Ni0wLjQ4Mi0wLjQ0MS0wLjg2OC0wLjg3NC0xLjcyMyAgICBjLTAuMDA5LTAuMDE3LTAuMDA5LTAuMDE3LTAuMDE4LTAuMDM1Yy0xLjU4OC0zLjEzNy0yLjMxOS00LjU1NS0zLjI3Mi02LjI5OGMtMS43NDQtMy4xNy0zLjUyMS01LjY0Ny01LjY2OC03LjY3NCAgICBjLTMuNzc4LTMuNjY4LTguODktNS45MDctMTQuMjAyLTYuMjQzTDYzLjAxLDBjLTUuNTgsMC4yNzctMTAuODYyLDIuNjA1LTE0Ljc0Nyw2LjQ2MmMtMi4wMzUsMS45NjMtMy43NDEsNC4zNjctNS40NDQsNy40NTggICAgYy0wLjk1NiwxLjc0NC0xLjc0MiwzLjI2Ni0zLjI0MSw2LjIzMWMtMC4wODksMC4xNzUtMC4wODksMC4xNzUtMC4xNzcsMC4zNWMtMC4zNDIsMC42NzctMC40OTEsMC45NzItMC42ODQsMS4zNTIgICAgYy02LjQ1OSwxMi43NjQtMTIuNzYyLDI1LjcwNC0xOC45MTUsMzguODI0Yy00LjUsOS42MzYtNy42NzgsMTYuNTc1LTEwLjczNiwyMy41MDdjLTEuODg3LDQuMjk5LTIuOTU2LDcuNTE0LTMuNDI0LDEwLjkyOSAgICBjLTAuOTksNi41ODcsMC40MjQsMTMuNTM2LDMuOTE0LDE5LjI0OWMzLjAwNSw0Ljk1OCw3LjUxMyw4LjkzNiwxMi43NTksMTEuMjM5YzQuMDg4LDEuOCw4LjU5MywyLjYxMywxMy4wMjksMi4zNDcgICAgYzUuNjA1LTAuMzAzLDExLjIzNC0yLjI3MSwxNi40NDktNS41NjNjNC43NzItMi45ODMsOS4wNjMtNi44NDYsMTQuMDk2LTEyLjM0NmwtMy43NjEtMC4wMDQgICAgYzQuNjExLDUuMDYxLDguNjE0LDguNzMyLDEzLjAwNiwxMS42NTFjNS4xNTgsMy40NTYsMTAuNjg5LDUuNjI0LDE2LjI2OSw2LjE2YzYuNDg3LDAuNjksMTMuMTg2LTAuOTYzLDE4LjYwNy00LjYyNSAgICBjNC43NzItMy4yMDEsOC41NDEtNy45MiwxMC42NTktMTMuMzM4YzEuMzc1LTMuNTA2LDIuMDU4LTcuMjg2LDEuOTkzLTExLjA0OUwxMjIuNjYzLDk4Ljg1MXoiIGZpbGw9IiNGRjc5NzciIGlkPSJBaXJibmIiLz48L2c+PC9nPjwvc3ZnPg==">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">No time to host?</a></li>
+				<li><a href="#"><span>Become a Host</span></a></li>
+				<li><a href="#">Help</a></li>
+				<li><a href="#">Sing Up</a></li>
+				<li><a href="#">Log In</a></li>
+			</ul><!--and header/ul-->
+		</div><!--header/container-fluid -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-1">
+					<div class="row">
+						<h1 id="h1" class="header-title">
+							<span class="header-title-Airbnb">Airbnb</span> Book unique homes and experience a city like a local.
+						</h1>
+					</div>
+				</div>
+			</div><!-- header/container/row -->
+		</div><!-- header/container -->
+
+		<div class="container">
+			<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row">
+					<div class="train train-1 col-md-4">
+						<div class="row">
+							<div class="col-md-12">
+								<p class="header-p-up">Where</p>
+							</div>
+							<div class="col-md-12">
+								<p class="header-p-down">Anywhere</p>
+							</div>
+						</div>
+					</div>
+					<div class="train train-2 col-md-4">
+						<div class="row">
+							<div class="col-md-12">
+								<p class="header-p-up">When</p>
+							</div>
+							<div class="col-md-12">
+								<p class="header-p-down">Anytime</p>
+							</div>
+						</div>
+					</div>
+					<div class="train train-3 col-md-4">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="row">
+									<div class="col-md-12">
+										<p class="header-p-up">Guests</p>
+									</div>
+									<div class="col-md-12">
+										<p class="header-p-down">1 guest <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<button type="button" class="pull-right btn btn-danger">Search</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- header/col-md-10-->
+			</div><!-- header/row-->
+		</div> <!-- header/container -->
+
+		<div class="container">
+			<div class="row">
+				<div class="header-menu">
+				<div class="header-menu-border col-md-10 col-md-offset-1">
+					<div class="row">
+					<ul class="list-inline">
+					  <li>
+						  	<a class="header-menu-a" href="https://www.airbnb.co.uk/s/all?allow_override%5B%5D=&s_tag=c-EY1x9R">
+						  		<span class="header-menu-active">FOR YOU</span>
+						  	</a>
+					  </li>
+					  <li>
+						  	<a class="header-menu-a" href="https://www.airbnb.co.uk/s/homes?allow_override%5B%5D=&s_tag=FFFA2FXg">
+						  		<span class="header-menu-span">HOMES</span>
+						  	</a>
+					  </li>
+					  <li>
+						  	<a class="header-menu-a" href="https://www.airbnb.co.uk/s/experiences?s_tag=nIH7XFZj&allow_override%5B%5D=">
+						  		<span class="header-menu-span">EXPERIENCES</span>
+						  	</a>
+					  </li>
+					  <li>
+						  	<a class="header-menu-a" href="https://www.airbnb.co.uk/s/places?s_tag=fVjv_k0y&allow_override%5B%5D=">
+						  		<span class="header-menu-span">PLACES</span>
+						  	</a>
+					  	</li>
+					</ul>
+					</div>
+				</div>
+				</div> <!-- header/container -->
+			</div><!-- header/row -->
+		</div><!-- header/container -->
+	</header>
+	<main>
+	<!--  ///////////Experiences\\\\\\\\\\ -->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row">
+						<div class="col-md-10">
+								<h3>Experiences</h3>
+						</div>
+						<div class="col-md-2">
+							<span class="main-right-span pull-right">See all <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-img col-md-2 col-md-offset-1">
+					<a class="main-a-reviews" href="https://www.airbnb.co.uk/experiences/20778?&source=p1&currentTab=&searchId=">
+
+						<img class="main-img img-responsive" src="https://a0.muscache.com/im/pictures/be783293-1742-4635-860a-76c5337b50fd.jpg?aki_policy=poster">
+
+						<span class="main-money-span">£91</span>
+						<span class="main-text">En voilier découvrez Calanques, Frioul, Cote...</span>
+						<br>
+						<span>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+						</span>
+						<span class="main-reviews">12 reviews</span>
+					</a>
+				</div>
+
+				<div class="col-img col-md-2">
+					<a class="main-a-reviews" href="https://www.airbnb.co.uk/experiences/30734?&source=p1&currentTab=&searchId=">
+
+						<img class="main-img img-responsive" src="https://a0.muscache.com/im/pictures/451d9b17-4f71-4a93-a7b5-67acbdeb306f.jpg?aki_policy=poster">
+
+						<span class="main-money-span">£64</span>
+						<span class="main-text">Sculpting a Head from Imagination with...</span>
+						<br>
+						<span>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+						</span>
+						<span class="main-reviews">51 reviews</span>
+					</a>
+				</div>
+
+				<div class="col-img col-md-2">
+					<a class="main-a-reviews" href="https://www.airbnb.co.uk/experiences/20778?&source=p1&currentTab=&searchId=">
+
+						<img class="main-img img-responsive" src="https://a0.muscache.com/im/pictures/50fd3c79-08a4-463c-950e-644676125e8b.jpg?aki_policy=poster">
+
+
+						<span class="main-money-span">£63</span>
+						<span class="main-text">Learn to make real Mexican food with local...</span>
+						<br>
+						<span>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+						</span>
+						<span class="main-reviews">1 reviews</span>
+					</a>
+				</div>
+
+				<div class="col-img col-md-2">
+					<a class="main-a-reviews" href="https://www.airbnb.co.uk/experiences/51496?&source=p1&currentTab=&searchId=">
+
+						<img class="main-img img-responsive" src="https://a0.muscache.com/im/pictures/cd745e58-5dc9-40e0-86af-edb52833c4d3.jpg?aki_policy=poster">
+
+						<span class="main-money-span">£52</span>
+						<span class="main-text">Get a taste of authentic tapas</span>
+						<br>
+						<span>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+						</span>
+						<span class="main-reviews">44 reviews</span>
+					</a>
+				</div>
+
+				<div class="col-img col-md-2">
+					<a class="main-a-reviews" href="https://www.airbnb.co.uk/experiences/21042?&source=p1&currentTab=&searchId=">
+
+						<img class="main-img img-responsive" src="https://a0.muscache.com/im/pictures/78c20ce6-c169-4752-830c-a6e68fbf5e56.jpg?aki_policy=poster">
+
+						<span class="main-money-span">£33</span>
+						<span class="main-text">Catch fresh crab out of the Pacific</span>
+						<br>
+						<span>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+							<i class="fa-star" aria-hidden="true"></i>
+						</span>
+						<span class="main-reviews">15 reviews</span>
+					</a>
+				</div>
+				<!-- <span><i class="fa fa-angle-right fa-3x" aria-hidden="true"></i></span>	 -->
+			</div>
+		</div><!-- main/container -->
+
+		<!--  ///////////homes\\\\\\\\\\ -->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row">
+						<div class="col-md-10">
+								<h3>Homes</h3>
+						</div>
+						<div class="col-md-2">
+								<span class="main-right-span pull-right">See all <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-img col-md-4">
+							<a class="main-a-reviews" href="https://www.airbnb.co.uk/rooms/1415908">
+
+								<img class="main-img img-responsive" src="https://a0.muscache.com/im/pictures/21162888/5a0f1151_original.jpg?aki_policy=large">
+
+								<span class="main-money-span">£294 Secluded Intown Treehouse</span>
+								<br>
+								<span class="main-text">Entire home/flat · 1 bed</span>
+								<br>
+								<span>
+									<i class="fa-star" aria-hidden="true"></i>
+									<i class="fa-star" aria-hidden="true"></i>
+									<i class="fa-star" aria-hidden="true"></i>
+									<i class="fa-star" aria-hidden="true"></i>
+									<i class="fa-star" aria-hidden="true"></i>
+								</span>
+								<span class="main-reviews">233 reviews</span>
+							</a>
+						</div>
+					
+
+						<div class="col-img col-md-4">
+							<a class="main-a-reviews" href="https://www.airbnb.co.uk/rooms/3406062">
+
+								<img class="main-img img-responsive" src="https://a0.muscache.com/im/pictures/307a5575-c3a4-4b21-8127-a37875ec1239.jpg?aki_policy=large">
+
+								<span class="main-money-span">£392 Malibu Dream Airstream </span>
+								<br>
+								<span class="main-text">Entire home/flat · 1 bed</span>
+								<br>
+								<span>
+									<i class="fa-star" aria-hidden="true"></i>
+									<i class="fa-star" aria-hidden="true"></i>
+									<i class="fa-star" aria-hidden="true"></i>
+									<i class="fa-star" aria-hidden="true"></i>
+									<i class="fa-star" aria-hidden="true"></i>
+								</span>
+								<span class="main-reviews">162 reviews</span>
+							</a>
+						</div>
+					
+
+						<div class="col-img col-md-4">
+							<a class="main-a-reviews" href="https://www.airbnb.co.uk/rooms/798483">
+
+								<img class="main-img img-responsive" src="https://a0.muscache.com/im/pictures/52149945/33130c63_original.jpg?aki_policy=large">
+
+								<span class="main-money-span">£262 Stunning All Bamboo House by River</span>
+								<br>
+								<span class="main-text">Entire home/flat · 3 bedы</span>
+								<br>
+								<span>
+									<i class="fa-star" aria-hidden="true"></i>
+									<i class="fa-star" aria-hidden="true"></i>
+									<i class="fa-star" aria-hidden="true"></i>
+									<i class="fa-star" aria-hidden="true"></i>
+									<i class="fa-star" aria-hidden="true"></i>
+								</span>
+								<span class="main-reviews">98 reviews</span>
+							</a>
+						</div>
+					</div>
+					<!-- <span><i class="fa fa-angle-right fa-3x" aria-hidden="true"></i></span>	 -->
+				</div>
+			</div><!-- main/row/homes -->
+		</div><!-- main/container/homes -->
+
+
+		<!-- ///////////////Featured destinations\\\\\\\\\\\\\\ -->
+
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row">
+						<div class="col-md-10">
+							<h3>Featured destinations</h3>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+
+					<div class="row">
+						<div class="col-img col-md-2">
+							<a class="main-a-reviews" href="https://www.airbnb.co.uk/s/Los-Angeles--CA/all">
+
+								<img class="main-img img-responsive" src="https://a0.muscache.com/4ea/air/r:w284-h426-sfit,e:fjpg-c75/pictures/7bff51c1-3c35-47a5-a86c-5ea75ab6be6c.jpg">
+
+								<span class="main-money-span">Los Angeles</span>
+							</a>
+						</div>
+
+						<div class="col-img col-md-2">
+							<a class="main-a-reviews" href="https://www.airbnb.co.uk/s/London--United-Kingdom/all">
+
+								<img class="main-img img-responsive" src="https://a0.muscache.com/4ea/air/r:w284-h426-sfit,e:fjpg-c75/pictures/ebbb24af-52d6-490c-89e9-16cc560140e8.jpg">
+
+								<span class="main-money-span">London</span>
+							</a>
+						</div>
+
+						<div class="col-img col-md-2">
+							<a class="main-a-reviews" href="https://www.airbnb.co.uk/s/Florence--Italy/all">
+
+								<img class="main-img img-responsive" src="https://a0.muscache.com/4ea/air/r:w284-h426-sfit,e:fjpg-c75/pictures/be1dee1c-2ce7-4efb-aca8-26d47a59514b.jpg">
+
+								<span class="main-money-span">Florence</span>
+							</a>
+						</div>
+
+						<div class="col-img col-md-2">
+							<a class="main-a-reviews" href="https://www.airbnb.co.uk/s/Tokyo--Japan/all">
+
+								<img class="main-img img-responsive" src="https://a0.muscache.com/4ea/air/r:w284-h426-sfit,e:fjpg-c75/pictures/1d8ecdb4-da01-4d35-9c9e-2ef6ca604eca.jpg">
+
+								<span class="main-money-span">Tokyo</span>
+							</a>
+						</div>
+
+						<div class="col-img col-md-2">
+							<a class="main-a-reviews" href="https://www.airbnb.co.uk/s/Paris--France/all">
+
+								<img class="main-img img-responsive" src="https://a0.muscache.com/4ea/air/r:w284-h426-sfit,e:fjpg-c75/pictures/d915ce17-d822-426d-b549-0c7b641fec56.jpg">
+
+								<span class="main-money-span">Paris</span>
+							</a>
+						</div>
+
+						<div class="col-img col-md-2">
+							<a class="main-a-reviews" href="https://www.airbnb.co.uk/s/San-Francisco--CA/all">
+
+								<img class="main-img img-responsive" src="https://a0.muscache.com/4ea/air/r:w284-h426-sfit,e:fjpg-c75/pictures/5be8a4f2-0aab-4bb8-b892-61527da7b550.jpg">
+
+								<span class="main-money-span">San Francisco</span>
+							</a>
+						</div>
+
+						<!-- <span><i class="fa fa-angle-right fa-3x" aria-hidden="true"></i></span>	 -->
+					</div>
+				</div>
+			</div><!-- main/row/Featured destinations -->
+		</div><!-- main/container/Featured destinations -->
+	</main>
+
+
+
+	<footer>
+		<div class="footer-fluid container-fluid">
+			<div class="row">
+				<hr>
+			</div>
+		</div><!-- footer/container-fluid -->
+
+		<div class="container">
+			<div class="row">
+				<div class="footer-main col-md-10 col-md-offset-1">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="footer-language row">
+										<div class="col-md-6">
+											<span class="footer-language-text">Endlish</span>
+										</div>
+										<div class="col-md-6">
+											<i class="footer-language-icon fa fa-angle-down fa-2x" aria-hidden="true"></i>
+										</div>
+									</div> 
+								</div>
+								<div class="col-md-12">
+									<div class="footer-currency row">
+										<div class="col-md-6">
+											<span class="footer-currency-text">GBP</span>	
+										</div>
+										<div class="col-md-6">
+											<i class="footer-currency-icon fa fa-angle-down fa-2x" aria-hidden="true"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div><!-- footer/col-md-3/lan+cur-->
+
+						<div class="col-md-3">
+							<ul class="list-unstyled">
+							  <li class="footer-list-title">Airbnb</li>
+							  <li>
+							  	<a class="footer-list-a" href="https://www.airbnb.co.uk/about/about-us">About us</a>
+							  </li>
+							  <li class="footer-list-li">
+							  	<a class="footer-list-a" href="https://www.airbnb.co.uk/careers">Careers</a>
+							  </li>
+							  <li class="footer-list-li">
+							  	<a class="footer-list-a" href="https://press.atairbnb.com/">Press</a>
+							  </li>
+							  <li class="footer-list-li">
+							  	<a class="footer-list-a" href="https://www.airbnb.co.uk/help/topic/250/terms---policies">Policies</a>
+							  </li>
+							  <li class="footer-list-li">
+							  	<a class="footer-list-a" href="https://www.airbnb.co.uk/help?from=footer">Help</a>
+							  </li>
+							  <li class="footer-list-li">
+							  	<a class="footer-list-a" href="https://www.airbnb.co.uk/diversity">Diversity & Belonging</a>
+							  </li>
+							</ul>
+						</div><!-- footer/col-md-3/list1-->
+
+						<div class="col-md-3">
+							<ul class="list-unstyled">
+							  <li class="footer-list-title">Discover</li>
+							  <li>
+							  	<a class="footer-list-a" href="https://www.airbnb.co.uk/trust">Trust & Safety</a>
+							  </li>
+							  <li class="footer-list-li">
+							  	<a class="footer-list-a" href="https://www.airbnb.co.uk/invite?r=6">Travel Credit</a>
+							  </li>
+							  <li class="footer-list-li">
+							  	<a class="footer-list-a" href="https://www.airbnbcitizen.com/">Airbnb Citizen</a>
+							  </li>
+							  <li class="footer-list-li">
+							  	<a class="footer-list-a" href="https://www.airbnb.co.uk/work?s=footer">Business Travel</a>
+							  </li>
+							  <li class="footer-list-li">
+							  	<a class="footer-list-a" href="https://www.airbnb.co.uk/things-to-do">Guidebooks</a>
+							  </li>
+							  <li class="footer-list-li">
+							  	<a class="footer-list-a" href="https://airbnbmag.com/">Airbnbmag</a>
+							  </li>
+							</ul>
+						</div><!-- footer/col-md-3/list2-->
+
+						<div class="col-md-3">
+							<ul class="list-unstyled">
+							  <li class="footer-list-title">Hosting</li>
+							  <li>
+							  	<a class="footer-list-a" href="https://www.airbnb.co.uk/host?from_footer=1">Why Host</a>
+							  </li>
+							  <li class="footer-list-li">
+							  	<a class="footer-list-a" href="https://www.airbnb.co.uk/hospitality">THospitality</a>
+							  </li>
+							  <li class="footer-list-li">
+							  	<a class="footer-list-a" href="https://www.airbnb.co.uk/help/article/1379/responsible-hosting-in-the-united-kingdom">Responsible Hosting</a>
+							  </li>
+							  <li class="footer-list-li">
+							  	<a class="footer-list-a" href="https://community.withairbnb.com/t5/Community-Center/ct-p/community-center">Community Centre</a>
+							  </li>
+							</ul>
+						</div><!-- footer/col-md-3/list3-->
+
+					</div><!--befor - footer-main col-md-10 col-md-offset-1 -->
+				</div><!--footer-main col-md-10 col-md-offset-1-->
+
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row">
+						<hr>
+					</div>
+				</div>
+
+				<div class="footer-handwriting col-md-10 col-md-offset-1">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="row">
+								<div class="col-md-1">
+									<svg viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" style="display:block; fill:currentColor; height:2em; width:2em; color: #767676; margin-left: -15px;" data-reactid="14"><path d="M499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z" data-reactid="15"></path></svg>
+								</div>
+								<div class="col-md-10">
+									<span class="footer-span-handwriting">© Airbnb, Inc.</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<ul class="pull-right list-inline">
+							  <li>
+							  	<a class="footer-handwriting-a" href="https://www.airbnb.co.uk/terms">Terms</a>
+							  </li>
+							  <li>
+							  	<a class="footer-handwriting-a" href="https://www.airbnb.co.uk/terms/privacy_policy">Privacy</a>
+							  </li>
+							  <li>
+							  	<a class="footer-handwriting-a" href="https://www.airbnb.co.uk/sitemaps">Site Map</a>
+							  </li>
+							  <li>
+							  	<a class="footer-handwriting-icon" href="https://www.facebook.com/airbnbuk/?brand_redir=324826532457"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+							  </li>
+							  <li>
+							  	<a class="footer-handwriting-icon" href="https://twitter.com/airbnb"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+							  </li>
+							  <li>
+							  	<a class="footer-handwriting-icon" href="https://www.instagram.com/airbnb/"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+							  </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--footer/main-container-->
+	</footer>
+</body>
+</html>
+
+

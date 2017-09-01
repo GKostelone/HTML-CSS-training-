@@ -1,0 +1,259 @@
+<!-- https://blog.heapanalytics.com/engineering/page/2/ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script
+		src="https://code.jquery.com/jquery-2.2.4.js"
+		integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+		crossorigin="anonymous">
+	 </script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/oj.mustache/0.7.2/oj.mustache.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheets.css">
+
+	<script src="https://use.fontawesome.com/b33141a820.js"></script>
+
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-default">
+				<div class="navigation container-fluid">
+					<div class="col-md-10 col-md-offset-1">
+					    <!-- Brand and toggle get grouped for better mobile display -->
+					    <div class="navbar-header">
+					      <a class="navbar-left" href="#">
+					      	<img class="img-logo img-responsive" src="http://blog.heapanalytics.com/wp-content/uploads/2017/03/heap-400.png">
+					      </a>
+					    </div>
+
+					    <!-- Collect the nav links, forms, and other content for toggling -->
+					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					      <ul class="nav navbar-nav">
+					        <li><a class="navbar-nav-link" href="#">FEATURES</a></li>
+					        <li><a class="navbar-nav-link" href="#">CUSTOMERS</a></li>
+					        <li><a class="navbar-nav-link" href="#">PRISING</a></li>
+					        <li><a class="navbar-nav-link" href="#">DOCS</a></li>
+					      </ul>
+					      <div class="navbar-right">
+					      	<ul class="nav navbar-nav navbar-right">
+						       <li><a class="navbar-nav-link" href="#">LOG IN</a></li>
+						       <button type="button" class="btn btn-default">SIGN UP</button>
+					      	</ul>
+					      </div>
+					    </div><!-- header/.navbar-collapse -->
+					</div><!-- header/.col-md-10 -->
+					<div class="container-fluid">
+					<div class="col-md-10 col-md-offset-1">
+						<ul class="lower-header nav navbar-nav">
+						    <li><a class="lower-header-a" href="#">Blog</a></li>
+						    <li><a class="lower-header-a" href="#">News</a></li>
+						    <li><a class="lower-header-a" href="#">Engineering</a></li>
+						    <li><a class="lower-header-a" href="#">Podcast</a></li>
+						    <li><a class="lower-header-a" href="#">Analysis</a></li>
+						</ul>
+						    <ul class="nav navbar-nav navbar-right">							    
+							    <a href="http://twitter.com/heap">
+							    	<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+							    </a>
+						    </ul>
+					</div>
+					</div>
+				</div><!-- header/.container-fluid -->
+		</nav>
+	</header><!-- and header -->
+	<main>
+		<div class="container">
+			<div class="row">
+				<h1 class="main-title">Engineering</h1>
+
+				<div class="main-links col-md-4">
+					<div class="main-links-post col-md-12">
+						<div class="col-md-12">
+							<h2 class="main-links-h2">
+								<a class="main-links-h2-a" href="https://blog.heapanalytics.com/postgresqls-powerful-new-join-type-lateral/">PostgreSQL’s Powerful New Join Type: LATERAL</a>
+							</h2>
+						</div>
+						<div class="col-md-12">
+							<p class="main-links-post-text">
+								PostgreSQL 9.3 has a new join type! Lateral joins arrived without a lot of fanfare, but they enable some powerful new queries that were previously only tractable with procedural code. In this...
+							</p>
+						</div>
+						<div class="col-md-12">
+							<a class="main-links-img-a" href="https://blog.heapanalytics.com/author/drob/">
+							<img class="img-circle" src="https://secure.gravatar.com/avatar/8a8924f5aa1112ad141d54cb8381ba3b?s=24&r=g"> Dan Robinson</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="main-links col-md-4">
+					<div class="main-links-post col-md-12">
+						<div class="col-md-12">
+							<h2 class="main-links-h2">
+								<a class="main-links-h2-a" href="https://blog.heapanalytics.com/postgresqls-powerful-new-join-type-lateral/">Building Automated Analytics Logging for iOS Apps</a>
+							</h2>
+						</div>
+						<div class="col-md-12">
+							<p class="main-links-post-text">
+								Analytics is often the first tool developers add to their iOS app. A standard approach is to write logging code like this: Let’s call this manual...
+							</p>
+						</div>
+						<div class="col-md-12">
+							<a class="main-links-img-a" href="https://blog.heapanalytics.com/author/drob/">
+							<img class="img-circle" src="https://secure.gravatar.com/avatar/969b63e8afc527b20f162e3b9c65dd2d?s=24&r=g"> Matin Movassate</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="main-links col-md-4">
+					<div class="main-links-post col-md-12">
+						<div class="col-md-12">
+							<h2 class="main-links-h2">
+								<a class="main-links-h2-a" href="https://blog.heapanalytics.com/postgresqls-powerful-new-join-type-lateral/">Creating PostgreSQL Arrays Without A Quadratic Blowup</a>
+							</h2>
+						</div>
+						<div class="col-md-12">
+							<p class="main-links-post-text">
+								At Heap, we lean on PostgreSQL for most of the backend heavy lifting.[1] We store each event as an hstore blob, and we keep a PostgreSQL array of events done by each user we track, sorted by...
+							</p>
+						</div>
+						<div class="col-md-12">
+							<a class="main-links-img-a" href="https://blog.heapanalytics.com/author/drob/">
+							<img class="img-circle" src="https://secure.gravatar.com/avatar/8a8924f5aa1112ad141d54cb8381ba3b?s=24&r=g"> Dan Robinson</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="clearfix"></div>  
+
+				<div class="main-links col-md-4">
+					<div class="main-links-post col-md-12">
+						<div class="col-md-12">
+							<h2 class="main-links-h2">
+								<a class="main-links-h2-a" href="https://blog.heapanalytics.com/postgresqls-powerful-new-join-type-lateral/">Using PostgreSQL Arrays The Right Way</a>
+							</h2>
+						</div>
+						<div class="col-md-12">
+							<p class="main-links-post-text">
+								At Heap, we lean on PostgreSQL for most of the backend heavy lifting.[1] We store each event as an hstore blob, and we keep a PostgreSQL array of events done by each user we track, sorted by...
+							</p>
+						</div>
+						<div class="col-md-12">
+							<a class="main-links-img-a" href="https://blog.heapanalytics.com/author/drob/">
+							<img class="img-circle" src="https://secure.gravatar.com/avatar/8a8924f5aa1112ad141d54cb8381ba3b?s=24&r=g"> Dan Robinson</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="main-links col-md-4">
+					<div class="main-links-post col-md-12">
+						<div class="col-md-12">
+							<h2 class="main-links-h2">
+								<a class="main-links-h2-a" href="https://blog.heapanalytics.com/postgresqls-powerful-new-join-type-lateral/">How We Estimated Our AWS Costs Before Shipping Any Code</a>
+							</h2>
+						</div>
+						<div class="col-md-12">
+							<p class="main-links-post-text">
+								Heap is a web and iOS analytics tool that automatically captures every user interaction, eliminating the need to define events upfront and allowing for...
+							</p>
+						</div>
+						<div class="col-md-12">
+							<a class="main-links-img-a" href="https://blog.heapanalytics.com/author/drob/">
+							<img class="img-circle" src="https://secure.gravatar.com/avatar/969b63e8afc527b20f162e3b9c65dd2d?s=24&r=g"> Matin Movassate</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="main-links col-md-4">
+					<div class="main-links-post col-md-12">
+						<div class="col-md-12">
+							<h2 class="main-links-h2">
+								<a class="main-links-h2-a" href="https://blog.heapanalytics.com/postgresqls-powerful-new-join-type-lateral/">Getting the Details Right in an Interactive Line Graph</a>
+							</h2>
+						</div>
+						<div class="col-md-12">
+							<p class="main-links-post-text">
+								At Heap, we recently redesigned our line graphs with an eye towards user experience and data transparency. Line graphs are simple and well-known, and many of the changes we made may...
+							</p>
+						</div>
+						<div class="col-md-12">
+							<a class="main-links-img-a" href="https://blog.heapanalytics.com/author/ravi/">
+							<img class="img-circle" src="https://secure.gravatar.com/avatar/0af64cb485620c9e8494ef990f560a48?s=24&r=g"> Dan Robinson</a>
+						</div>
+					</div>
+				</div>
+
+
+			</div><!-- row -->
+		</div><!--main/col-md-10 col-md-offset-1 -->
+	</main><!-- and main -->
+	<footer>
+		<div class="container-fluid">
+			<div class="row-footer row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row">
+						<div class="about col-md-5">
+							<a href="http://heapanalytics.com/">
+								<span class="heapmark"></span>
+							</a>
+							<p class="about-text">Heap automates the annoying parts of user analytics. No more manual anything. Just insights.</p>
+							<p class="about-year">© 2016 Heap Inc.</p>
+						</div>
+						<div class="col-md-7">
+							<div class="row">
+								<div class="about-col col-md-3">
+								<span class="about-links-title">Explore</span>
+									<ul class="list-unstyled">
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/">Home</a></li>
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/customers">Customers</a></li>
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/pricing">Pricing</a></li>
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/docs">Docs</a></li>
+									</ul>
+								</div>
+								<div class="about-col col-md-3">
+								<span class="about-links-title">Features</span>
+									<ul class="list-unstyled">
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/features/data-capture">Data Capture</a></li>
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/features/event-visualizer">Event Visualizer</a></li>
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/features/users">Users</a></li>
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/features/graphs">Graphs</a></li>
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/features/funnels">Funnels</a></li>
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/features/sql">SQL</a></li>
+									</ul>
+								</div>
+								<div class="about-col col-md-3">
+								<span class="about-links-title">Company</span>
+									<ul class="list-unstyled">
+									  <li><a class="footer-links-a" href="http://blog.heapanalytics.com">Blog</a></li>
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/jobs">Jobs</a></li>
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/about">About</a></li>
+									  <li><a class="footer-links-a" href="https://twitter.com/heap">Twitter</a></li>
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/contact-sales">Contact Us</a></li>
+									</ul>
+								</div>
+								<div class="about-col col-md-3">
+								<span class="about-links-title">Security</span>
+									<ul class="list-unstyled">
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/privacy">Privacy</a></li>
+									  <li><a class="footer-links-a" href="http://heapanalytics.com/terms">Terms</a></li>
+									</ul>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer><!-- and footer -->
+</body>
+</html>
