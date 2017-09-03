@@ -1,0 +1,32 @@
+/*----------header----------*/
+
+.global-nav {
+	height: 47px;
+}
+
+a {
+	padding-right: 5px;
+	padding-left: 5px;
+	color: #66757F;
+}
+i {
+	padding-right: 5px;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 21px !important;
+    line-height: 1;
+    font-family: FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

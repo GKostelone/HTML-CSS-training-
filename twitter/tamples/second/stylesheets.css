@@ -1,0 +1,154 @@
+.header-row {
+	height: 46px;
+	background-image: url(https://abs.twimg.com/a/1501647918/img/t1/lohp_streams_header_bg_v4.png);
+	background-size: 100% 100%;
+	border-bottom: 1px solid #4182AD;
+}
+
+#header-icon-logo {
+	font-size: 22px;
+	margin-left: 50%;
+	margin-right: 16%;
+	vertical-align: baseline;
+	margin-top: 11px;
+	color: #ffffff;
+}
+
+.header-right-a {
+	font-size: 12px;
+	margin-right: 15px;
+	color: #ffffff;
+	font-weight: 200;
+}
+
+.header-right-a:hover {
+	color: #ffffff;	
+}
+
+.header-span {
+	font-size: 13px;
+	font-weight: 400;
+	color: #ffffff;
+}
+
+#header-icon-down {
+	vertical-align: text-top;
+	color: #ffffff;
+}
+
+/*----------main----------*/
+
+
+
+.main-title {
+	font-size: 27px;
+	line-height: 32px;
+	font-weight: bold;
+	margin-top: 110px;
+	padding-left: 25px;
+}
+
+.form-main {
+	padding-right: 25px;
+	padding-left: 25px;
+}
+
+/*.form-control {
+	height: 46px;
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: bold;
+
+}*/
+.form-controll {
+    display: block;
+    width: 400px;
+    height: 46px;
+    padding: 12px;
+    font-size: 18px;
+    margin-top: 26px;
+    line-height: 20px;
+    font-weight: bold;
+    background-color: #fff;
+    border: 1px solid #E6ECF0;
+    border-radius: 3px;
+    -webkit-box-shadow: none;
+    box-shadow: none; 
+    -webkit-transition: none; 
+    -o-transition: none;
+    transition: none; 
+}
+
+input::placeholder {
+  color: #AAB8C2;
+}
+
+
+.btn {
+	border-radius: 100px;
+	box-shadow: none;
+	cursor: pointer;
+	font-size: 18px;
+	line-height: 20px;
+	padding: 6px 17px;
+	text-align: center;
+	background-color: #1DA1F2;
+	font-weight: 500;
+	color: #ffffff;
+	margin-right: 13px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 392px;
+	height: 50px;
+}
+
+.btn:hover{
+	color: #ffffff;
+	background-color: #006dbf;
+}
+
+.btn:focus {
+	outline: none;
+}
+
+p {
+	padding-right: 25px;
+	padding-left: 25px;
+	font-size: 12px;
+	line-height: 16px;
+	color: #657786;
+}
+
+p:last-child {
+	margin-top: 20px;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+
+.main-p-a {
+	color: #1DA1F2;
+}
+
+.main-p-a:hover {
+	color: #1DA1F2;
+}
+
+
+.test1{
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
