@@ -1,5 +1,5 @@
 body {
-    background-color: #FFDB4D;
+    background-color: #E6ECF0;
 }
 
 /*----------header----------*/
@@ -7,6 +7,7 @@ body {
 .global-nav {
 	height: 47px;
     background-color: #ffffff;
+    border-bottom: 1px solid #ACB1B4;
 }
 
 .header-a {
@@ -71,11 +72,11 @@ li>a:hover {
 li:hover {
     text-decoration: none;
     border-bottom: 2px solid #1DA1F2;
-    padding-bottom: 10px;    
+    padding-bottom: 8px;    
 }
 
 .header-right-side {
-    margin-top: 7px;
+    margin-top: 8px;
 }
 
 .header-input, .header-img, .header-tweet-btn {
@@ -109,4 +110,24 @@ li:hover {
 .header-tweet-btn:hover {
     color: #ffffff;
     background-color: #1DA1F2;
+}
+
+/*----------main----------*/
+main {
+    margin-top: 10px;
+}
+.left-nav-blue {
+    background-color: #1DA1F2;
+    height: 95px;
+    padding-top: 10px;
+}
+
+.left-a>a {
+    display: block;
+}
+.left-a>a:hover {
+      
+}
+.left-down-color {
+    background-color: #ffffff;
 }
