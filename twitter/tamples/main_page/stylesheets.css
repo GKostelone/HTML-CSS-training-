@@ -141,7 +141,7 @@ main {
     text-decoration: none; 
 }
 
-.nick-name {
+.nick-name, .title-of-trends {
     font-weight: bold;
     font-size: 18px;
     line-height: 25px;
@@ -169,7 +169,7 @@ main {
 }
 
 .nick-name-tweets-span:hover {
-    color: #1DA1F2;   
+    color: #1DA1F2;
 }
 
 .nick-name-tweets-num {
@@ -177,4 +177,31 @@ main {
     font-weight: bold;
     padding-top: 3px;
     margin-bottom: 20px;
+}
+
+.middle-dot-span {
+    padding-right: 4px;
+    padding-left: 4px;
+}
+
+.change-trends {
+    font-size: 12px;
+    color: #1DA1F2;
+}
+
+.change-trends:hover {
+    color: #1DA1F2;
+}
+
+.name-of-trends {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: bold;
+    color: #1DA1F2;
+}
+
+.text-of-trends {
+    color: #657786;
+    font-size: 12px;
+    line-height: 16px;
 }
