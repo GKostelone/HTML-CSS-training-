@@ -131,3 +131,50 @@ main {
 .left-down-color {
     background-color: #ffffff;
 }
+
+.nick-name-tweets-a {
+    color: #1DA1F2 !important;
+}
+
+.nick-name-tweets-a:hover {
+    /*color: #1DA1F2;*/
+    text-decoration: none; 
+}
+
+.nick-name {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #14171A;
+}
+
+.nick-name-a {
+    margin-top: 10px;
+}
+
+.nick-name-dot {
+    color: #657786;
+}
+
+.nick-name-tweets {
+    margin-bottom: 16px;
+}
+
+.nick-name-tweets-span {
+    color: #657786;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: .02em;
+    line-height: 16px;
+}
+
+.nick-name-tweets-span:hover {
+    color: #1DA1F2;   
+}
+
+.nick-name-tweets-num {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 3px;
+    margin-bottom: 20px;
+}
